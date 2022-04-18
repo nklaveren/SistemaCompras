@@ -19,12 +19,12 @@ namespace SistemaCompra.Infra.Data.Produto
             builder.OwnsOne(
                 c => c.UsuarioSolicitante,
                 b => b.Property(x => x.Nome)
-                .HasColumnName("Solicitante"));
+                .HasColumnName("UsuarioSolicitante"));
 
             builder.OwnsOne(
                 c => c.NomeFornecedor,
                 b => b.Property(x => x.Nome)
-                .HasColumnName("Fornecedor"));
+                .HasColumnName("NomeFornecedor"));
 
             builder.OwnsOne(
                 c => c.TotalGeral,

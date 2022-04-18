@@ -42,13 +42,13 @@ namespace SistemaCompra.API
             services.AddScoped<ISolicitacaoCompraRepository, SolicitacaoCompraRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddDbContext<SistemaCompraContext>(o => o.UseInMemoryDatabase("SistemaCompra"));
+           // services.AddDbContext<SistemaCompraContext>(o => o.UseInMemoryDatabase("SistemaCompra"));
 
-            //services.AddDbContext<SistemaCompraContext>(options =>
-            //    options.UseSqlServer(
-            //        Configuration.GetConnectionString("DefaultConnection"),
-            //        o => o.MigrationsAssembly("SistemaCompra.API"))
-            //);
+            services.AddDbContext<SistemaCompraContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection"),
+                    o => o.MigrationsAssembly("SistemaCompra.API"))
+            );
 
             services.AddSwaggerGen(c =>
             {

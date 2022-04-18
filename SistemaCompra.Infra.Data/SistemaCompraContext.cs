@@ -25,11 +25,11 @@ namespace SistemaCompra.Infra.Data
             modelBuilder.ApplyConfiguration(new SolicitacaoCompraConfiguration());
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseLoggerFactory(loggerFactory)
-        //        .EnableSensitiveDataLogging()
-        //        .UseSqlServer(@"Server=localhost\SQLEXPRESS01;Database=SistemaCompraDb;Trusted_Connection=True;MultipleActiveResultSets=true");
-        //}
+       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+       {
+           optionsBuilder.UseLoggerFactory(loggerFactory)
+               .EnableSensitiveDataLogging()
+               .UseSqlServer(@"Server=localhost\SQLEXPRESS01;Database=SistemaCompraDb;Trusted_Connection=True;MultipleActiveResultSets=true");
+       }
     }
 }
